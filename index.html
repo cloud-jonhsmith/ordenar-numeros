@@ -10,36 +10,38 @@
 <body>
     <h1>Ordenamiento de números</h1>
 
-<div class="flex-container">
-    <fieldset class="datos">
-        <legend>Datos de entrada</legend>
-        <div>
-            <label class="label">Ingrese un número positivo</label>
-         </div>
-         <div>
-             <input id="numero">
-             <button id="agregar">Agregar</button>
-         </div>
-         <hr>
-             <textarea id="mostrarEntrada" class="textarea" cols="30" 
-             rows="1"></textarea>
-    </fieldset>
-
-    <fieldset class="datos">
-        <legend>Datos de salida</legend>
-        <div>
-            <label class="label">Ordenación ascendente</label>
-        </div>
-
-        <textarea id="mostrasSalida" class="textarea" cols="30" rows="10"></textarea>
-    </fieldset>
-
-    <button id="ordenar" class="btn btn-primary">Ordenar</button>
+    <form class="flex-container">
+        <fieldset>
+            <legend>Datos de entrada</legend>
+                <label class="label">Ingrese un número positivo</label>
+                <input id="numAdd" class="numAdd"> <!-- captura el número -->
+                <button id="btn-add" class="add btn btn-primary">Agregar</button>
+                <button id="clear" class="clear btn btn-primary">Limpiar</button>
+             <hr>
+                 <textarea id="arrayIn" class="textarea" cols="30" 
+                 rows="1"></textarea>
+        </fieldset>
+        
+        <hr>
+        
+        <fieldset>
+            <legend>Datos de salida</legend>
+                <label class="label">Ordenación ascendente</label>    
+                
+                <textarea id="arrayOut" class="textarea" cols="30"     rows="10"></textarea>
+        </fieldset>
     
-    <script src="javascript.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> 
-</div>
+        <button id="order" class="btn btn-primary">Ordenar</button>
+        
+        <!-- <script>
+            var input = document.getElementById("btn-add")
+            console.log(input)
+        </script> -->
+
+        <script src="javascript.js"></script>
+        <!-- <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> -->
+    </form>
 </body>
 </html>

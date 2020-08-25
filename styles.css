@@ -22,10 +22,14 @@ h1 {
     text-align: center;
 }
 
-#numero {
-    width: 70%;
+.numAdd {
+    width: 40%;
 }
 
-#agregar {
+.add {
+    width: 28%;
+}
+
+.clear {
     width: 28%;
 }
