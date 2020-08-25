@@ -10,7 +10,7 @@
 
   //función para agregar números y mostrarlos en el textarea
   let agregarNum = function(){
-    let num = input.value
+    let num = parseInt(input.value)
 
     if(!filtrar(num)){
       alert("Número repetido, por favor ingresar otro número")
@@ -48,7 +48,17 @@
     let arregloOrdenados = arregloNum
     let aux = 0
 
-    for (let i in arregloOrdenados) {
+    for(var i=0;i<arregloOrdenados.length;i++){
+      for(var j=i+1;j<arregloOrdenados.length;j++){
+        if (arregloOrdenados[i]>arregloOrdenados[j]) {
+          aux = arregloOrdenados[i]
+          arregloOrdenados[i] = arregloOrdenados[j]
+          arregloOrdenados[j] = aux          
+        }
+      }
+    }
+
+    /* for (let i in arregloOrdenados) {
       for (let j in arregloOrdenados) {
         if (arregloOrdenados[i]<arregloOrdenados[j]) {
           aux = arregloOrdenados[j]
@@ -56,7 +66,7 @@
           arregloOrdenados[i] = aux
         }
       }
-    }
+    } */
 
     listOut.value = arregloOrdenados
 
