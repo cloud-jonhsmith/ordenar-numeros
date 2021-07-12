@@ -16,7 +16,11 @@
 
     if (is_number(num)) {
       numero = parseInt(num)
-      bandera = true
+      if (numero <= 0) {
+        alert("Debe ingresar un número positivo")
+      } else {
+        bandera = true
+      }
     } else {
       alert("Debe ingresar un número")
       bandera=false
