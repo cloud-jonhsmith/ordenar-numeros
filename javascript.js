@@ -1,4 +1,3 @@
-
   //variables
   var listOut = document.getElementById("arrayOut"),
       listIn = document.getElementById("arrayIn"),
@@ -10,24 +9,52 @@
 
   //función para agregar números y mostrarlos en el textarea
   let agregarNum = function(){
-    let num = parseInt(input.value)
 
-    if(!filtrar(num)){
-      alert("Número repetido, por favor ingresar otro número")
+    let num = input.value;
+    let numero
+    let bandera = false
+
+    if (is_number(num)) {
+      numero = parseInt(num)
+      bandera = true
     } else {
-      arregloNum.push(num)
-      console.log(arregloNum)
+      alert("Debe ingresar un número")
+      bandera=false
+    }
+
+    if(filtrar(numero) && bandera === true){
+      arregloNum.push(numero)
+      //console.log(arregloNum)
       
       listIn.value = arregloNum //muestra en el textarea los números ingresados
+    } else if(!filtrar(numero) && bandera === true){
+      alert("Número repetido, por favor ingresar otro número")
     }
+
+    input.value = "";
+    input.focus();
       
-      event.preventDefault()
+    event.preventDefault()
 
   }
 
+  function is_number(n) { return /^-?[\d.]+(?:e-?\d+)?$/.test(n);}
+
   //limpia la casilla del input para agregar más números
   let clear = function(){
-    input.value = ""
+    var listIn = document.getElementById("arrayIn");
+    var listOut = document.getElementById("arrayOut");
+
+    input.value = "";
+    //console.log(listOut);
+    listOut.value = ""
+    listOut = []
+    listIn.value = ""
+    listIn = []
+    //console.log(listIn);
+    arregloNum = []
+
+    input.focus();
 
     event.preventDefault()
   }
@@ -69,6 +96,7 @@
     } */
 
     listOut.value = arregloOrdenados
+    //console.log(listOut);
 
     event.preventDefault()
   }
